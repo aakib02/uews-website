@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Gallery Node | UEWS</title>
+    <meta name="description" content="Browse verified photos and video content documenting our local community drives, healthcare projects, and educational workshops.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand" style="display: flex; align-items: center; gap: 10px;">
+                <img src="/asset/uews-logo.png" alt="UEWS Logo" style="height: 45px; width: auto; border-radius: 6px; object-fit: cover;">
+                <span style="font-weight: 700; color: var(--primary);">UEWS</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link ">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="programs.html" class="nav-link">Programs</a></li>
+                <li><a href="membership.html" class="nav-link">Membership</a></li>
+                <!-- <li><a href="blood-donation.html" class="nav-link">Blood Bank</a></li> -->
+                <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle Theme"><i class="fas fa-moon"></i></button>
+                <button id="navToggle" class="nav-toggle" aria-label="Open Navigation Menu"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1 class="section-title">Verified Visual Archives</h1>
+        <p class="section-subtitle">Real-time dynamic visualization logs from our social impact fields across Rajasthan.</p>
+
+        <div class="gallery-filters">
+            <button class="filter-btn active" data-filter="all">Show All</button>
+            <button class="filter-btn" data-filter="edu">Education Projects</button>
+            <button class="filter-btn" data-filter="blood">Blood Campaigns</button>
+            <button class="filter-btn" data-filter="welfare">Community Care</button>
+        </div>
+
+        <div class="masonry-grid" id="masonryGrid">
+            <div class="gallery-item" data-category="edu">
+                <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=500&q=80" alt="Education Infrastructure Resource Library Deployment">
+            </div>
+            <div class="gallery-item" data-category="blood">
+                <img src="https://images.unsplash.com/photo-1536856788630-ceab45e1b9a6?auto=format&fit=crop&w=500&q=80" alt="Blood Donation Camps Setup Network">
+            </div>
+            <div class="gallery-item" data-category="welfare">
+                <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=500&q=80" alt="Welfare Resources Logistics Distribution Operations">
+            </div>
+        </div>
+    </main>
+
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+        <img id="lightboxImg" class="lightbox-content" src="" alt="Fullscreen Expanded Active Archive Layout">
+    </div>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 Unique Education & Welfare Society (UEWS). All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

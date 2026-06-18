@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Management System | UEWS</title>
+    <meta name="description" content="Apply to join the Unique Education & Welfare Society. Complete our secure registration node to become an authorized community development member.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand" style="display: flex; align-items: center; gap: 10px;">
+                <img src="/asset/uews-logo.png" alt="UEWS Logo" style="height: 45px; width: auto; border-radius: 6px; object-fit: cover;">
+                <span style="font-weight: 700; color: var(--primary);">UEWS</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link ">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="programs.html" class="nav-link ">Programs</a></li>
+                <li><a href="membership.html" class="nav-link active">Membership</a></li>
+                <!-- <li><a href="blood-donation.html" class="nav-link">Blood Bank</a></li> -->
+                <!-- <li><a href="gallery.html" class="nav-link">Gallery</a></li> -->
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle Theme"><i class="fas fa-moon"></i></button>
+                <button id="navToggle" class="nav-toggle" aria-label="Open Navigation Menu"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1 class="section-title">Membership Registry</h1>
+        <p class="section-subtitle">Gain structural authority to implement projects, direct localized welfare protocols, and coordinate regional resource hubs.</p>
+
+        <div class="grid-2">
+            <div>
+                <h2 style="margin-bottom: 1.5rem; color: var(--primary);">Why Join the UEWS Network?</h2>
+                <div class="glass-panel" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <h4><i class="fas fa-certificate" style="color: var(--secondary); margin-right: 8px;"></i> Accredited Governance Roles</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Participate directly in our institutional decision-making layers and head localized development committees.</p>
+                </div>
+                <div class="glass-panel" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <h4><i class="fas fa-network-wired" style="color: var(--secondary); margin-right: 8px;"></i> Integrated Professional Ecosystem</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Connect directly with senior civic leadership bodies, corporate CSR partners, and institutional sponsors.</p>
+                </div>
+            </div>
+
+            <div class="glass-panel" style="padding: 2.5rem;">
+                <h3 style="margin-bottom: 1.5rem;">Secure Registration Entry</h3>
+            <form action="https://formspree.io/f/xykaqkeq" method="POST">
+    <div class="form-group">
+        <label for="memberName">Full Name</label>
+        <input type="text" id="memberName" name="Full_Name" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="memberEmail">Email Address</label>
+        <input type="email" id="memberEmail" name="Email_Address" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="memberPhone">Contact Number</label>
+        <input type="tel" id="memberPhone" name="Phone_Number" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="memberOccupation">Occupation</label>
+        <input type="text" id="memberOccupation" name="Occupation" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="memberAddress">Residential Address</label>
+        <textarea id="memberAddress" name="Address" class="form-control" rows="3" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Application</button>
+</form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 Unique Education & Welfare Society (UEWS). All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us & Support Node | UEWS</title>
+    <meta name="description" content="Reach out to the UEWS operational headquarters in Didwana. Submit inquiry forms, access verified phone channels, and view location mappings.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand" style="display: flex; align-items: center; gap: 10px;">
+                <img src="/asset/uews-logo.png" alt="UEWS Logo" style="height: 45px; width: auto; border-radius: 6px; object-fit: cover;">
+                <span style="font-weight: 700; color: var(--primary);">UEWS</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link ">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="programs.html" class="nav-link ">Programs</a></li>
+                <li><a href="membership.html" class="nav-link">Membership</a></li>
+                <!-- <li><a href="blood-donation.html" class="nav-link">Blood Bank</a></li> -->
+                <!-- <li><a href="gallery.html" class="nav-link">Gallery</a></li> -->
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle Theme"><i class="fas fa-moon"></i></button>
+                <button id="navToggle" class="nav-toggle" aria-label="Open Navigation Menu"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1 class="section-title">Connect with Us</h1>
+        <p class="section-subtitle">Reach out directly to coordinate donations, clarify membership tracks, or request emergency support.</p>
+
+        <div class="grid-2">
+            <div>
+                <div class="glass-panel" style="padding: 2rem; margin-bottom: 2rem;">
+                    <h3>HQ Communication Desk</h3>
+                    <p style="margin-top: 1rem; color: var(--text-muted);">
+                        <i class="fas fa-map-marker-alt" style="color: var(--primary); margin-right:8px;"></i> Second Floor, Bhurji Market, Didwana, Rajasthan 341303
+                    </p>
+                    <p style="margin-top: 0.5rem; color: var(--text-muted);">
+                        <i class="fas fa-phone-alt" style="color: var(--primary); margin-right:8px;"></i> +91-00000-00000 (Dynamic Placeholder Line)
+                    </p>
+                    <p style="margin-top: 0.5rem; color: var(--text-muted);">
+                        <i class="fas fa-envelope" style="color: var(--primary); margin-right:8px;"></i> info@uews.org (Dynamic Placeholder Registry)
+                    </p>
+                </div>
+
+                <div class="glass-panel" style="overflow: hidden; height: 300px; border-radius: 16px;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3549.771239517172!2d74.564567!3d27.401145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3941f9ab6601ad8b%3A0xbcc0e5bb4fae0a77!2sDidwana%2C%20Rajasthan%20341303!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <div class="glass-panel" style="padding: 2.5rem;">
+                <h3>Submit an Inquiry</h3>
+<form id="contactForm" action="https://formspree.io/f/xnjykjlz" method="POST" style="margin-top: 1.5rem;">
+    <div class="form-group">
+        <label for="contactName">Your Name</label>
+        <input type="text" id="contactName" name="Name" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="contactEmail">Email Address</label>
+        <input type="email" id="contactEmail" name="Email" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="contactSubject">Subject Range</label>
+        <input type="text" id="contactSubject" name="Subject" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="contactMessage">Message Details</label>
+        <textarea id="contactMessage" name="Message" class="form-control" rows="4" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" style="width: 100%;">Transmit Secure Message</button>
+</form>
+<p id="contactStatus" style="display:none; color: var(--secondary); margin-top: 1rem; font-weight: 600; text-align: center;">
+    <i class="fas fa-check-circle"></i> Thank you! Your inquiry has been sent successfully.
+</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 Unique Education & Welfare Society (UEWS). All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
