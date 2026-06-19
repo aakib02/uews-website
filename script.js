@@ -13,6 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+
+
+
+    
     // 2. Mobile Nav Hamburger Controls
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
