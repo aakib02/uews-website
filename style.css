@@ -382,6 +382,163 @@ a {
 }
 
 /* ==========================================================================
+   MODERN CAPSULE GRID HERO LAYOUT (AS REQUESTED)
+   ========================================================================== */
+.grid-hero-section {
+    background-color: #f8fafc; /* साफ़ सफ़ेद/हल्का ग्रे बैकग्राउंड जैसा इमेज में है */
+    min-height: 85vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-top: 100px;
+    padding-bottom: 4rem;
+    overflow: hidden;
+}
+
+/* डार्क मोड के लिए बैकग्राउंड कलर एडजस्टमेंट */
+[data-theme="dark"] .grid-hero-section {
+    background-color: #0f172a;
+}
+
+.hero-grid-container {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr; /* दो हिस्सों में विभाजन */
+    gap: 4rem;
+    align-items: center;
+    width: 100%;
+}
+
+/* --- LEFT CONTENT STYLING --- */
+.hero-left-text {
+    max-width: 680px;
+}
+
+.hero-mini-tag {
+    background: rgba(29, 185, 84, 0.12);
+    color: var(--secondary);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+.hero-main-title {
+    font-size: 3rem !important;
+    line-height: 1.15;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 1.5rem;
+}
+
+[data-theme="dark"] .hero-main-title {
+    color: #ffffff;
+}
+
+.hero-main-title span {
+    color: var(--primary); /* सिलावट समाज को हाईलाइट करने के लिए मुख्य रंग */
+}
+
+.hero-desc-p {
+    font-size: 1.1rem !important;
+    line-height: 1.6;
+    color: #64748b;
+    margin-bottom: 2.5rem;
+}
+
+[data-theme="dark"] .hero-desc-p {
+    color: #94a3b8;
+}
+
+.hero-action-buttons {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+}
+
+/* --- RIGHT IMAGE CAPSULE GRID STYLING --- */
+.hero-right-graphics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    width: 100%;
+    height: 550px;
+}
+
+.graphic-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* इमेज ग्रिड को ऊपर-नीचे (Staggered) लुक देने के लिए */
+.col-down {
+    transform: translateY(30px);
+}
+
+.capsule-card {
+    width: 100%;
+    border-radius: 100px; /* कैप्सूल जैसी गोल गोलाई */
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    background: #e2e8f0;
+}
+
+/* होवर करने पर हल्का सा एनीमेशन */
+.capsule-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.img-tall {
+    height: 320px;
+}
+
+.img-short {
+    height: 200px;
+}
+
+.capsule-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* इमेज कभी खिंचेगी या फटेगी नहीं */
+    object-position: center;
+}
+
+/* --- RESPONSIVE MOBILE VIEW --- */
+@media (max-width: 992px) {
+    .hero-grid-container {
+        grid-template-columns: 1fr; /* मोबाइल पर एक के नीचे एक हो जाएगा */
+        gap: 3rem;
+        text-align: center;
+    }
+    
+    .hero-action-buttons {
+        justify-content: center;
+    }
+    
+    .hero-main-title {
+        font-size: 2.2rem !important;
+    }
+    
+    .hero-right-graphics {
+        height: 450px;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+    
+    .col-down {
+        transform: translateY(15px);
+    }
+    
+    .img-tall { height: 240px; }
+    .img-short { height: 160px; }
+}
+
+/* ==========================================================================
    FOOTER ARCHITECTURE
    ========================================================================== */
 .footer {

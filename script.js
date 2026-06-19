@@ -22,33 +22,36 @@ document.addEventListener('DOMContentLoaded', () => {
             navMenu.classList.toggle('active');
         });
     }
-
-    // 3. Counter Animation Engine (Run on statistics targets)
+// 3. Optimized Counter Animation Engine (Smooth & Precise)
     const counters = document.querySelectorAll('.stat-counter');
     if(counters.length > 0) {
-        const runCounters = () => {
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                const count = +counter.innerText;
-                const speed = 200;
-                const inc = target / speed;
+        const startCounterAnimation = (counter) => {
+            const target = +counter.getAttribute('data-target');
+            const speed = 40; // एनीमेशन की स्पीड (जितना कम नंबर, उतना तेज़)
+            const increment = target / speed;
 
-                if(count < target) {
-                    counter.innerText = Math.ceil(count + inc);
-                    setTimeout(runCounters, 1);
+            const updateCount = () => {
+                const currentCount = +counter.innerText;
+                if (currentCount < target) {
+                    counter.innerText = Math.ceil(currentCount + increment);
+                    setTimeout(updateCount, 25); // हर 25ms में नंबर बढ़ेगा
                 } else {
-                    counter.innerText = target;
+                    counter.innerText = target; // अंत में सटीक नंबर सेट करें
                 }
-            });
+            };
+            updateCount();
         };
 
-        // Simple Intersection Observer for Stats Counters
+        // Intersection Observer: जब स्क्रीन स्क्रॉल होकर नीचे आएगी तब शुरू होगा
         const observer = new IntersectionObserver((entries) => {
-            if(entries[0].isIntersecting) {
-                runCounters();
-                observer.disconnect();
-            }
-        }, { threshold: 0.5 });
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    // सभी काउंटर्स को एक-एक करके चालू करें
+                    counters.forEach(counter => startCounterAnimation(counter));
+                    observer.disconnect(); // एनीमेशन सिर्फ एक बार चलाने के लिए
+                }
+            });
+        }, { threshold: 0.2 }); // 20% सेक्शन दिखते ही एनीमेशन शुरू हो जाएगा
         
         const statsSec = document.querySelector('.stats-section');
         if(statsSec) observer.observe(statsSec);
