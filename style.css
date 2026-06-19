@@ -921,3 +921,12 @@ a {
         padding: 2rem 1.5rem !important;
     }
 }
+
+/* 🎯 डार्क मोड में फोकस कार्ड की हेडिंग का रंग सुधारने के लिए */
+[data-theme="dark"] .focus-card h3 {
+    color: #f8fafc !important; /* यह डार्क मोड में हेडिंग को चमकदार ऑफ-व्हाइट बना देगा */
+}
+/* 🎯 डार्क मोड में FAQ के सवालों का रंग चमकाने के लिए */
+[data-theme="dark"] .faq-header h4 {
+    color: #f8fafc !important; /* यह डार्क मोड में सवालों को चमकदार ऑफ-व्हाइट बना देगा */
+}
