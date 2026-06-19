@@ -149,4 +149,66 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+
+    // 7. Swiper Slider Engine Initializer
+if (document.querySelector('.community-swiper')) {
+    const swiper = new Swiper('.community-swiper', {
+        loop: true,                 // 🔥 यह अंतहीन लूप चालू रखेगा (कोई कार्ड डबल नहीं दिखेगा)
+        grabCursor: true,           // माउस ले जाने पर हाथ का निशान दिखेगा
+        spaceBetween: 30,           // कार्ड्स के बीच का गैप
+        slidesPerView: 1,           // डिफ़ॉल्ट रूप से मोबाइल पर 1 कार्ड दिखेगा
+        
+        autoplay: {
+            delay: 4000,            // हर 4 सेकंड में अपने आप आगे बढ़ेगा
+            disableOnInteraction: false, // यूजर के खुद स्क्रॉल करने के बाद भी ऑटोप्ले बंद नहीं होगा
+        },
+        
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,        // डॉट्स पर क्लिक करके भी बदल सकते हैं
+        },
+        
+        // रेस्पॉन्सिव ब्रेकपॉइंट्स (बड़ी स्क्रीन पर कितने कार्ड दिखेंगे)
+        breakpoints: {
+            768: {
+                slidesPerView: 2,   // टेबलेट पर 2 कार्ड
+            },
+            1024: {
+                slidesPerView: 3,   // लैपटॉप/कंप्यूटर पर 3 कार्ड एक साथ
+            }
+        }
+    });
+}
+
+
+
+// 8. FAQ Accordion Animation Engine
+document.querySelectorAll('.faq-header').forEach(header => {
+    header.addEventListener('click', () => {
+        const card = header.parentElement;
+        const body = card.querySelector('.faq-body');
+        const icon = card.querySelector('.faq-icon i');
+        
+        // अगर पहले से खुला हुआ है तो बंद करो
+        if (card.classList.contains('active')) {
+            card.classList.remove('active');
+            body.style.maxHeight = '0';
+            icon.style.transform = 'rotate(0deg)';
+        } else {
+            // पहले से खुले हुए दूसरे FAQ को बंद करने के लिए (Optional)
+            document.querySelectorAll('.faq-card').forEach(otherCard => {
+                otherCard.classList.remove('active');
+                otherCard.querySelector('.faq-body').style.maxHeight = '0';
+                otherCard.querySelector('.faq-icon i').style.transform = 'rotate(0deg)';
+            });
+            
+            // अब करंट वाले को खोलो
+            card.classList.add('active');
+            body.style.maxHeight = body.scrollHeight + 'px';
+            icon.style.transform = 'rotate(180deg)';
+            icon.style.transition = 'transform 0.3s ease';
+        }
+    });
+});
 });

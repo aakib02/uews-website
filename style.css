@@ -538,6 +538,66 @@ a {
     .img-short { height: 160px; }
 }
 
+
+/* ==========================================================================
+   SWIPER CARDS STYLING
+   ========================================================================== */
+.community-swiper {
+    width: 100%;
+    height: auto;
+}
+
+.swiper-custom-card {
+    height: auto !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+    border-radius: 16px;
+    background: var(--bg-card);
+    box-sizing: border-box;
+}
+
+.swiper-card-text {
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-style: italic;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.swiper-card-footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding-top: 1rem;
+}
+
+.swiper-avatar {
+    color: #fff;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.swiper-role {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+/* डॉट्स का रंग आपकी थीम के अनुसार करने के लिए */
+.swiper-pagination-bullet-active {
+    background: var(--primary) !important;
+}
+
 /* ==========================================================================
    FOOTER ARCHITECTURE
    ========================================================================== */
@@ -595,6 +655,25 @@ a {
     text-align: center;
     color: #64748B;
     font-size: 0.9rem;
+}
+
+
+/* ==========================================================================
+   FAQ ACCORDION STYLING
+   ========================================================================== */
+.faq-card {
+    transition: all 0.3s ease;
+    background: var(--bg-card);
+}
+
+.faq-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05) !important;
+    transform: translateY(-2px);
+}
+
+/* जब एक्टिव होगा तो तीर का निशान घूम जाएगा */
+.faq-card.active .faq-icon {
+    transform: rotate(180px);
 }
 
 /* ==========================================================================
